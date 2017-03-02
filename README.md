@@ -2,14 +2,15 @@
 
 This repo gives you a functioning dev environment that can be pushed to a WP Engine instance. This repo is built on the `wordpress:latest` docker container, and should remain up to date.
 
-# Getting Up And Running
+## Getting Up And Running
 
-Getting up and running should be a very straightforward process.
+Getting up and running should be a very straightforward process. You'll need both `git` and `docker` installed on your machine.
 
-1. Run `docker-compose up -d`
-2. Run `docker exec wpeb bin/bootstrap`
-3. Visit `http://localhost:8000/wp-admin`
-4. Rejoice
+1. Run `git clone --depth=1 git@github.com:apsislabs/wpengine-boilerplate.git <your project>`
+2. Run `docker-compose up -d`
+3. Run `docker exec wpeb bin/bootstrap`
+4. Visit `http://localhost:8000/wp-admin`
+5. Rejoice
 
 ## Logging In
 
