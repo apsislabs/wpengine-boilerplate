@@ -6,7 +6,7 @@ This repo gives you a functioning dev environment that can be pushed to a WP Eng
 
 Getting up and running should be a very straightforward process.
 
-1. Run `vagrant up`
+1. Run `docker-compose up -d`
 2. Run `docker exec <docker instance> bin/bootstrap`
 3. Visit `http://localhost:8000/wp-admin`
 4. Rejoice
