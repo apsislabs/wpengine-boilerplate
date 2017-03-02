@@ -6,13 +6,11 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: wordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+    env_file:
+      - .env.dev
 
   wordpress:
+    container_name: wpeb
     build: .
     depends_on:
       - db
@@ -21,9 +19,9 @@ services:
     restart: always
     volumes:
       - .:/var/www/html
-    environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_PASSWORD: wordpress
+    env_file:
+      - .env.dev
+
 
 volumes:
   db_data:

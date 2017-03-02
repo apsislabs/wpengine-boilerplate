@@ -1,3 +1,4 @@
 #! /bin/bash
-
-wp user create admin admin@apsis.io --user_pass=password --role=administrator
+wp db reset --yes
+wp plugin uninstall hello --deactivate
+wp core install --url=localhost:8000 --title=$WP_SITE_NAME --admin_user=$ADMIN_USERNAME --admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_EMAIL --skip-email
