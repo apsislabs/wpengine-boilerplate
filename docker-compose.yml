@@ -10,7 +10,6 @@ services:
       - .env.dev
 
   wordpress:
-    container_name: wpeb
     build: .
     depends_on:
       - db
