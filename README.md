@@ -4,13 +4,15 @@ This repo gives you a functioning dev environment that can be pushed to a WP Eng
 
 ## Getting Up And Running
 
-Getting up and running should be a very straightforward process. You'll need both `git` and `docker` installed on your machine.
+We recommend using [`degit`](https://github.com/Rich-Harris/degit) to scaffold your project. Setup is simple:
 
-1. Run `git clone --depth=1 git@github.com:apsislabs/wpengine-boilerplate.git <your project>`
-2. Run `docker-compose up -d`
-3. Run `docker exec <container name> bin/bootstrap`
-4. Visit `http://localhost:8000/wp-admin`
-5. Rejoice
+```sh
+npm install -g degit
+degit apsislabs/wpengine-boilerplate wp
+cd wp
+docker-compose up -d
+docker exec <container name> bin/bootstrap
+```
 
 ## Recommended Customizations
 
@@ -36,6 +38,8 @@ If you want to completely reset your dev environment, the easiest way is to run:
 ```sh
 $ docker-compose down -v && docker-compose up -d --build
 ```
+
+This is aliased as `bin/reset`.
 
 This will remove the mounted volume where all local data is stored, then rebuild the container. If you do this, be sure to re-run:
 

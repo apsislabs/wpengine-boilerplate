@@ -1,6 +1,19 @@
-version: '2'
+version: '3.1'
 
 services:
+
+  wordpress:
+    build: .
+    restart: always
+    ports:
+      - 8000:80
+    env_file:
+      - .env.dev
+    depends_on:
+      - db
+    volumes:
+      - .:/var/www/html
+
   db:
     image: mysql:5.7
     volumes:
@@ -8,19 +21,6 @@ services:
     restart: always
     env_file:
       - .env.dev
-
-  wordpress:
-    build: .
-    depends_on:
-      - db
-    ports:
-      - "8000:80"
-    restart: always
-    volumes:
-      - .:/var/www/html
-    env_file:
-      - .env.dev
-
 
 volumes:
   db_data:
