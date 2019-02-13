@@ -6,7 +6,7 @@
 *.swp
 Thumbs.db
 
-# Ignore Docker Volumes
+# Docker Overrides
 docker-compose.override.yml
 
 # wordpress specific
