@@ -6,6 +6,9 @@
 *.swp
 Thumbs.db
 
+# Docker Overrides
+docker-compose.override.yml
+
 # wordpress specific
 wp-config.php
 wp-content/uploads/
