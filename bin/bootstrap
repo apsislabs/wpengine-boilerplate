@@ -1,5 +1,5 @@
 #! /bin/bash
 wp db reset --yes
-wp core install --url=localhost:8000 --title=$WP_SITE_NAME --admin_user=$ADMIN_USERNAME --admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_EMAIL --skip-email
+wp core install --url="$WP_URL" --title=$WP_SITE_NAME --admin_user=$ADMIN_USERNAME --admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_EMAIL --skip-email
 wp plugin uninstall hello --deactivate
 wp plugin uninstall akismet --deactivate

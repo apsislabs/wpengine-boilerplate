@@ -11,7 +11,7 @@ npm install -g degit
 degit apsislabs/wpengine-boilerplate wp
 cd wp
 docker-compose up -d
-docker exec <container name> bin/bootstrap
+docker-compose exec wordpress bin/bootstrap
 ```
 
 ## Recommended Customizations
