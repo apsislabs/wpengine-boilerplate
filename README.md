@@ -31,6 +31,22 @@ password: password
 
 You can log in by visiting `localhost:8000/wp-admin`.
 
+## Custom Theme
+
+If you're writing a from-scratch theme for the new project, consider [cabinet](https://github.com/apsislabs/cabinet) as a starting point.
+
+```
+degit apsislabs/cabinet wp-content/theme/<your-theme-folder>
+```
+
+## Custom Post Types
+
+If you need to register custom post types or custom taxonomies for the new project, consider [carpenter](https://github.com/apsislabs/carpenter).
+
+```
+degit apsislabs/carpenter wp-content/plugins/carpenter
+```
+
 ## Resetting your Dev Environment
 
 If you want to completely reset your dev environment, the easiest way is to run:
