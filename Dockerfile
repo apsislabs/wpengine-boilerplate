@@ -1,4 +1,4 @@
-FROM wordpress:php7.2
+FROM wordpress:php7.3
 
 # Add sudo in order to run wp-cli as the www-data user
 # Configure MySQL - used for WP-CLI interaction
