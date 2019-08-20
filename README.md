@@ -11,7 +11,7 @@ npm install -g degit
 degit apsislabs/wpengine-boilerplate wp
 cd wp
 docker-compose up -d
-docker exec <container name> bin/bootstrap
+docker-compose exec wordpress bin/bootstrap
 ```
 
 ## Recommended Customizations
@@ -30,6 +30,22 @@ password: password
 ```
 
 You can log in by visiting `localhost:8000/wp-admin`.
+
+## Custom Theme
+
+If you're writing a from-scratch theme for the new project, consider [cabinet](https://github.com/apsislabs/cabinet) as a starting point.
+
+```
+degit apsislabs/cabinet wp-content/theme/<your-theme-folder>
+```
+
+## Custom Post Types
+
+If you need to register custom post types or custom taxonomies for the new project, consider [carpenter](https://github.com/apsislabs/carpenter).
+
+```
+degit apsislabs/carpenter wp-content/plugins/carpenter
+```
 
 ## Resetting your Dev Environment
 
@@ -57,3 +73,11 @@ $ docker exec <container name> bin/bootstrap
 ## Production
 
 You can add the Production server as an endpoint the same way that we add Staging, but the preferred method of deployment to Production is to deploy with `git` to Staging, and then to use WP Engine's dashboard to copy the Staging Site to Live.
+
+---
+
+# Built by Apsis
+
+[![apsis](https://s3-us-west-2.amazonaws.com/apsiscdn/apsis.png)](https://www.apsis.io)
+
+`wpengine-boilerplate` was built by Apsis Labs. We love sharing what we build! Check out our [other libraries on Github](https://github.com/apsislabs), and if you like our work you can [hire us](https://www.apsis.io/work-with-us/) to build your vision.

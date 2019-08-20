@@ -1,0 +1,8 @@
+# Copy this file to `docker-compose.override.yml`
+
+services:
+  wordpress:
+    # Environment variables specified here take precedence over .env.dev
+    environment:
+      # This allows you to change your wordpress url on initial install
+      - WP_URL="dockerhost:8000"
