@@ -1,11 +1,9 @@
-FROM wordpress:php7.3
+FROM wordpress:php7.4-fpm
 
-# Add sudo in order to run wp-cli as the www-data user
-# Configure MySQL - used for WP-CLI interaction
-RUN apt-get update && apt-get install -y sudo less && \
-    echo mysql-server-5.5 mysql-server/root_password password docker | debconf-set-selections && \
-    echo mysql-server-5.5 mysql-server/root_password_again password docker | debconf-set-selections && \
-    apt-get install -y mysql-common mysql-server mysql-client
+# Install dependencies
+RUN apt-get update && apt-get install -y\
+    sudo\
+    mariadb-client
 
 # Install PHPUnit & WP CLI
 COPY bin/wp-su.sh /bin/wp
