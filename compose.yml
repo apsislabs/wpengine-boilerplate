@@ -13,6 +13,7 @@ services:
 
   db:
     image: mysql:8
+    command: ["mysqld", "--mysql-native-password=ON"]
     volumes:
       - db_data:/var/lib/mysql
     env_file:

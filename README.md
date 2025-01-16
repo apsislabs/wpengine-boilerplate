@@ -1,22 +1,19 @@
-# WPEngine Boilerplate
+# WordPress Boilerplate
 
-This repo gives you a functioning dev environment that can be pushed to a WP Engine instance. This repo is built on the `wordpress:latest` docker container, and should remain up to date.
+This repo gives you a functioning wordpress dev environment. This repo is built on the `wordpress:latest` docker container, and should remain up to date.
 
 ## Getting Up And Running
 
-We recommend using [`degit`](https://github.com/Rich-Harris/degit) to scaffold your project. Setup is simple:
+Setup is simple. Clone this repo, then:
 
 ```sh
-npm install -g degit
-degit apsislabs/wpengine-boilerplate wp
-cd wp
-docker-compose up -d
-docker-compose exec wordpress bin/bootstrap
+docker compose up -d
+docker compose exec wordpress bin/bootstrap
 ```
 
 ## Recommended Customizations
 
-There are two files that you ought to customize before beginning development in earnest. The first is your `docker-compose.yml` file, where you'll want to change your `container_name` to avoid conflicts.
+There are two files that you ought to customize before beginning development in earnest. The first is your `docker compose.yml` file, where you'll want to change your `container_name` to avoid conflicts.
 
 Second, check ot the `.env.dev` file for environment variables used by the `bootstrap` script. Here you can change the `username`, `password`, or `email` for the user created by the `bootstrap` script.
 
@@ -52,7 +49,7 @@ degit apsislabs/carpenter wp-content/plugins/carpenter
 If you want to completely reset your dev environment, the easiest way is to run:
 
 ```sh
-$ docker-compose down -v && docker-compose up -d --build
+$ docker compose down -v && docker compose up -d --build
 ```
 
 This is aliased as `bin/reset`.
